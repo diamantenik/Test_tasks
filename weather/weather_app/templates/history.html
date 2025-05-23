@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>История поиска</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            padding: 40px;
+            color: #333;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #005577;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            padding: 5px 0;
+        }
+
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .empty {
+            color: #777;
+            font-style: italic;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>История поиска</h1>
+
+    {% if history %}
+        <ul>
+            {% for city in history %}
+                <li>{{ city }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty">История пуста.</p>
+    {% endif %}
+
+    <p><a href="/">← Назад на главную</a></p>
+</body>
+</html>
